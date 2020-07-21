@@ -60,6 +60,7 @@ const accuweather = () => {
           return request(params)
         })
         .then(([body,]) => {
+          console.log(body);
           if (unit == "Farenheit") {
             return {
               EpochTime: body.EpochTime,
