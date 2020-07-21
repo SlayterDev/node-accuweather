@@ -82,10 +82,16 @@ var accuweather = function accuweather() {
 
         if (unit == "Farenheit") {
           return {
+            EpochTime: body.EpochTime,
+            WeatherIcon: body.WeatherIcon,
             Summary: body.WeatherText,
             Temperature: body.Temperature.Imperial.Value,
             RealFeel: body.RealFeelTemperature.Imperial.Value,
-            Precipitation: body.Precip1hr.Imperial
+            Precipitation: body.Precip1hr.Imperial,
+            Wind: {
+              Speed: body.Wind.Speed.Imperial.Value,
+              Direction: body.Wind.Direction.English
+            }
           };
         } else {
           return {
